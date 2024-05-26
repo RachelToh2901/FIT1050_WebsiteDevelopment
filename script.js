@@ -75,6 +75,43 @@ $('.cs-item-services').on('click', function() {
     })
 });
 
+// Reference: https://medium.com/@sharnellgrant/how-i-created-a-sort-button-in-my-javascript-project-eb7a6b93148c
+document.addEventListener("DOMContentLoaded", function() {
+    const sortCriteria = document.getElementById("sort-criteria");
+    const sortOrder = document.getElementById("sort-order");
+    const reviewsList = document.querySelector("#reviews-1672 .cs-card-group");
+
+    sortReviews(sortCriteria.value, sortOrder.value);
+
+    sortCriteria.addEventListener("click", function() {
+        sortReviews(sortCriteria.value, sortOrder.value);
+    });
+
+    sortOrder.addEventListener("click", function() {
+        sortReviews(sortCriteria.value, sortOrder.value);
+    });
+
+    function sortReviews(criteria, order) {
+        const reviews = Array.from(reviewsList.children);
+
+        reviews.sort((a, b) => {
+            let comparison = 0;
+
+            if (criteria === "stars") {
+                comparison = parseInt(a.dataset.stars) - parseInt(b.dataset.stars);
+            } else if (criteria === "date") {
+                comparison = new Date(a.dataset.date) - new Date(b.dataset.date);
+            }
+
+            return order === "asc" ? comparison : -comparison;
+        });
+
+        reviews.forEach(review => reviewsList.appendChild(review));
+    }
+});
+
+
+
 
 
 

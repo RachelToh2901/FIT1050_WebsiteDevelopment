@@ -1,0 +1,188 @@
+:root {
+    /* remove this whole :root and put in your global css file that's shared on all pages, then just remove this section from all other Stitches you add later, only need this once in your global stylesheet */
+    --primary: #f0af5b;
+    --primaryLight: #f8d394;
+    --secondary: #905f09;
+    --secondaryLight: #937a50;
+    --headerColor: #1a1a1a;
+    --bodyTextColor: #000000;
+    --bodyTextColorWhite: #fafbfc;
+    /* 13px - 16px */
+    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    /* 31px - 49px */
+    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
+    --bodyFontSize: 1rem;
+    /* 60px - 100px top and bottom */
+    --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+  }
+  
+  body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+            margin: 0;
+        padding: 0;
+        }
+  
+  *, *:before, *:after {
+    /* prevents padding from affecting height and width */
+    box-sizing: border-box;
+  }
+
+
+/*-- -------------------------- -->
+<---          Reviews           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #reviews-1672 {
+      padding: var(--sectionPadding);
+    }
+    #reviews-1672 .cs-container {
+      width: 100%;
+      max-width: 80rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* 40px - 64px */
+      gap: clamp(2.5rem, 4.5vw, 4rem);
+    }
+    #reviews-1672 .sort-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    #reviews-1672 .sort-container label, 
+    #reviews-1672 .sort-container select {
+        margin-right: 10px; 
+    }
+
+    #reviews-1672 .cs-content {
+      text-align: left;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    #reviews-1672 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+    }
+    #reviews-1672 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: .1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+    #reviews-1672 .cs-card-group {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      /* 16px - 20px */
+      gap: clamp(1rem, 2.5vw, 1.25rem);
+    }
+    #reviews-1672 .cs-item {
+      list-style: none;
+      width: 100%;
+      /* 20px - 40px top & bottom */
+      /* 20px - 40px left & right */
+      padding: clamp(1.25rem, 3.15vw, 2.5rem) clamp(1.25rem, 3.15vw, 2.5rem);
+      background-color: #f7f7f7;
+      /* prevents padding from adding to height and width */
+      box-sizing: border-box;
+      display: flex;
+      grid-column: span 12;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      position: relative;
+      /* 24px - 48px */
+      gap: clamp(1.5rem, 4vw, 3rem);
+    }
+    #reviews-1672 .cs-flex-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    #reviews-1672 .cs-profile {
+      width: 3.25rem;
+      height: auto;
+      border-radius: 50%;
+      position: relative;
+      display: block;
+    }
+    #reviews-1672 .cs-profile img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      /* makes the image behave like a background image */
+      object-fit: cover;
+    }
+    #reviews-1672 .cs-name {
+      /* 20px - 25px */
+      font-size: 1.25rem;
+      line-height: 1.2em;
+      font-weight: 700;
+      margin: 0;
+      /* in case one card has more text than the other, this pushes up against the review text so the name and title are always at the bottom. Only works if parent is a flexbox */
+      margin-top: auto;
+      color: var(--headerColor);
+      display: block;
+    }
+    #reviews-1672 .cs-job {
+      /* 14px - 16px */
+      font-size: 1rem;
+      line-height: 1.5em;
+      font-weight: 400;
+      margin: 0;
+      color: var(--bodyTextColor);
+      display: block;
+    }
+    #reviews-1672 .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    #reviews-1672 .cs-item-stars {
+      width: 6.75rem;
+      height: auto;
+    }
+    #reviews-1672 .cs-review {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.6vw, 1.25rem);
+      line-height: 1.5em;
+      margin: 0;
+      color: var(--bodyTextColor);
+      z-index: 1;
+    }
+    #reviews-1672 .cs-quote {
+      width: 5.375rem;
+      height: auto;
+      position: absolute;
+      right: 0rem;
+      bottom: 0rem;
+      z-index: 0;
+    }
+  }
+  /* Tablet - 768px */
+  @media only screen and (min-width: 48rem) {
+    #reviews-1672 .cs-item {
+      grid-column: span 4;
+    }
+  }
+                                  
